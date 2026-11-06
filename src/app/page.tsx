@@ -3,14 +3,15 @@ import Hero from '../components/Hero'
 import MenuHighlights from '../components/MenuHighlights'
 import Atmosphere from '../components/Atmosphere'
 import Suits from '../components/Suits'
-import ReviewsSection, { resolveReviewsMode } from '../components/ReviewsSection'
+import ReviewsSection from '../components/ReviewsSection'
+import { cafe } from '../data/cafe'
+import { resolveReviews } from '../lib/reviews-mode'
 import Location from '../components/Location'
 import Footer from '../components/Footer'
 import MobileBar from '../components/MobileBar'
 
 export default function Page() {
-  const widgetUrl = process.env.NEXT_PUBLIC_YANDEX_REVIEWS_WIDGET_URL
-  const mode = resolveReviewsMode(widgetUrl)
+  const { mode, widgetUrl } = resolveReviews(process.env.NEXT_PUBLIC_YANDEX_REVIEWS_WIDGET_URL, cafe.orgId)
   return (
     <>
       <Header />

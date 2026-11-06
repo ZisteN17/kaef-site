@@ -46,6 +46,9 @@ describe('jsonld', () => {
     expect(ld.telephone).toBe('+79050259995')
     expect(ld.geo).toEqual({ '@type': 'GeoCoordinates', latitude: 55.779664, longitude: 49.183765 })
   })
+  it('в разметке есть оба написания названия', () => {
+    expect(ld.alternateName).toEqual(['Каеф', 'Kaef'])
+  })
   it('нет неподтверждённого: часов, цен, aggregateRating', () => {
     for (const k of ['openingHours', 'openingHoursSpecification', 'priceRange', 'aggregateRating']) {
       expect(ld).not.toHaveProperty(k)

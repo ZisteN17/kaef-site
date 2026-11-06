@@ -29,7 +29,7 @@ export default function Hero() {
             >
               {cafe.name}
             </motion.span>
-            <span className="sr-only"> — {cafe.descriptor.toLowerCase()} в {cafe.city === 'Казань' ? 'Казани' : cafe.city}</span>
+            <span className="sr-only"> ({cafe.nameAlt}) — {cafe.descriptor.toLowerCase()} в {cafe.city === 'Казань' ? 'Казани' : cafe.city}</span>
           </h1>
 
           <motion.div

@@ -4,12 +4,8 @@ import WaveDivider from './WaveDivider'
 import { cafe, reviews } from '../data/cafe'
 import { formatRating, pluralRu } from '../lib/format'
 import { reviewsUrl } from '../lib/links'
-import { resolveReviewsMode, type ReviewsMode } from '../lib/reviews-mode'
-
-export { resolveReviewsMode }
+import type { ReviewsMode } from '../lib/reviews-mode'
 import { btnGhostDark, container } from './ui'
-
-export type { ReviewsMode }
 
 export default function ReviewsSection({ mode, widgetUrl }: { mode: ReviewsMode; widgetUrl?: string }) {
   return (
@@ -17,7 +13,7 @@ export default function ReviewsSection({ mode, widgetUrl }: { mode: ReviewsMode;
       <div className={`${container} grid gap-10 lg:grid-cols-12`}>
         <Reveal className="lg:col-span-5">
           <p className="section-label text-mint">Отзывы</p>
-          <p className="mt-4 font-display text-[clamp(6rem,14vw,11rem)] leading-[0.9] text-mint">{formatRating(cafe.rating.value)}</p>
+          <p className="mt-4 font-display text-[clamp(5rem,12vw,9rem)] leading-[0.9] text-mint">{formatRating(cafe.rating.value)}</p>
           <p className="mt-4 flex items-center gap-2 text-[17px]">
             <Star size={18} className="fill-mint text-mint" aria-hidden="true" />
             {cafe.rating.ratings} {pluralRu(cafe.rating.ratings, ['оценка', 'оценки', 'оценок'])} ·{' '}
@@ -38,10 +34,10 @@ export default function ReviewsSection({ mode, widgetUrl }: { mode: ReviewsMode;
                 src={widgetUrl}
                 title="Отзывы о Каеф на Яндекс Картах"
                 loading="lazy"
-                className="h-[600px] w-full rounded-card bg-paper"
+                className="h-[560px] w-full rounded-card bg-paper md:h-[680px]"
               />
               <p className="mt-3 text-[14px] text-mint">
-                Отзывы показывает Яндекс Карты.{' '}
+                Отзывы с фото показывает Яндекс Карты, листайте внутри окна.{' '}
                 <a href={reviewsUrl()} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
                   Все отзывы на Яндекс Картах
                 </a>

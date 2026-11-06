@@ -7,7 +7,7 @@ export function cafeJsonLd(siteUrl: string) {
     '@context': 'https://schema.org',
     '@type': 'CafeOrCoffeeShop',
     name: cafe.name,
-    alternateName: cafe.nameLatin,
+    alternateName: [cafe.nameAlt, cafe.nameLatin],
     description: `${cafe.descriptor} в Казани: завтраки, кофе и спокойные встречи.`,
     url: siteUrl,
     telephone: cafe.phone.e164,

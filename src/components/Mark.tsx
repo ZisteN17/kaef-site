@@ -1,4 +1,4 @@
-/** Знак Каеф (перерисованные листья). Знак принадлежит владельцу кафе. */
+/** Знак Кәеф (перерисованные листья). Знак принадлежит владельцу кафе. */
 export default function Mark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 64" aria-hidden="true" className={className}>

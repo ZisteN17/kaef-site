@@ -56,7 +56,7 @@ export default function Footer() {
       </div>
       <div className={`${container} mt-12 border-t border-mint/20 pt-6 text-[14px] text-mint`}>
         <p>
-          © {year} {cafe.name}. {cafe.legalLine}
+          © {year} {cafe.name}
         </p>
       </div>
     </footer>

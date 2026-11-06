@@ -6,8 +6,9 @@ import { cafe, menu, photos, reviews, features, atmosphere } from '../src/data/c
 const root = join(__dirname, '..', 'public')
 
 describe('данные кафе', () => {
-  it('название как в Яндекс Картах', () => {
-    expect(cafe.name).toBe('Каеф')
+  it('название с татарской «ә», в Яндекс Картах — «Каеф»', () => {
+    expect(cafe.name).toBe('К\u04d9еф')
+    expect(cafe.nameAlt).toBe('Каеф')
   })
   it('в меню 6 позиций, у каждой положительная цена и существующее фото', () => {
     expect(menu).toHaveLength(6)

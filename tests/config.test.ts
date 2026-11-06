@@ -1,20 +1,24 @@
 import { describe, expect, it } from 'vitest'
-import { resolveReviewsMode } from '../src/lib/reviews-mode'
+import { resolveReviews } from '../src/lib/reviews-mode'
 import { metrikaId } from '../src/lib/consent'
 import { isDemo, siteUrl } from '../src/lib/site'
 
 describe('режим отзывов', () => {
-  it('без адреса — curated', () => {
-    expect(resolveReviewsMode(undefined)).toBe('curated')
-    expect(resolveReviewsMode('')).toBe('curated')
+  const org = '91052974636'
+  it('без настроек — официальный виджет организации', () => {
+    expect(resolveReviews(undefined, org)).toEqual({ mode: 'yandex-widget', widgetUrl: 'https://yandex.ru/maps-reviews-widget/91052974636?comments' })
+    expect(resolveReviews('  ', org).mode).toBe('yandex-widget')
   })
-  it('адрес виджета Яндекса — yandex-widget', () => {
-    expect(resolveReviewsMode('https://yandex.ru/maps-reviews-widget/91052974636?comments')).toBe('yandex-widget')
+  it('свой адрес Яндекса подставляется', () => {
+    expect(resolveReviews('https://yandex.ru/maps-reviews-widget/1?comments', org).widgetUrl).toBe('https://yandex.ru/maps-reviews-widget/1?comments')
   })
-  it('чужой или небезопасный адрес — curated', () => {
-    expect(resolveReviewsMode('http://yandex.ru/x')).toBe('curated')
-    expect(resolveReviewsMode('https://evil.example/widget')).toBe('curated')
-    expect(resolveReviewsMode('javascript:alert(1)')).toBe('curated')
+  it('off выключает виджет', () => {
+    expect(resolveReviews('off', org)).toEqual({ mode: 'curated' })
+  })
+  it('чужой или небезопасный адрес игнорируется', () => {
+    for (const bad of ['http://yandex.ru/x', 'https://evil.example/widget', 'javascript:alert(1)']) {
+      expect(resolveReviews(bad, org).widgetUrl).toBe('https://yandex.ru/maps-reviews-widget/91052974636?comments')
+    }
   })
 })
 

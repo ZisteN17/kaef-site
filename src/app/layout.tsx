@@ -10,9 +10,9 @@ import ConsentBanner from '../components/ConsentBanner'
 const display = Kurale({ weight: '400', subsets: ['latin', 'cyrillic', 'cyrillic-ext'], display: 'swap', variable: '--font-display' })
 const text = Geologica({ adjustFontFallback: false, subsets: ['latin', 'cyrillic', 'cyrillic-ext'], display: 'swap', variable: '--font-text' })
 
-const title = `${cafe.name} — гастрокофейня в Казани: завтраки и кофе на Мансура Хасанова, 13`
+const title = `${cafe.name} (${cafe.nameAlt}) — гастрокофейня в Казани: завтраки и кофе на Мансура Хасанова, 13`
 const description =
-  'Каеф — кафе в Казани на улице Мансура Хасанова, 13: красивые завтраки, кофе с собой, летняя веранда и спокойные встречи. Меню, отзывы и маршрут.'
+  'Кәеф (Каеф) — кафе в Казани на улице Мансура Хасанова, 13: красивые завтраки, кофе с собой, летняя веранда и спокойные встречи. Меню, отзывы и маршрут.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: '/',
-    images: [{ url: '/images/kaef/interior-counter.jpg', width: 2000, height: 1500, alt: 'Зал и стойка кафе Каеф' }],
+    images: [{ url: '/images/kaef/interior-counter.jpg', width: 2000, height: 1500, alt: 'Зал и стойка кафе Кәеф' }],
   },
 }
 

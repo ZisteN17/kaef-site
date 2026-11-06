@@ -1,5 +1,5 @@
 /**
- * Весь контент сайта «Каеф» в одном файле.
+ * Весь контент сайта «Кәеф» (в Яндекс Картах — «Каеф») в одном файле.
  * Источник фактов: карточка Яндекс Карт (https://yandex.ru/maps/org/kayef/91052974636/), сверено 2026-11-06.
  * Правка меню, отзывов и контактов — только здесь, компоненты не трогать.
  */
@@ -38,25 +38,25 @@ export type PhotoKey =
   | 'dish-flatbread-breakfast'
 
 export const photos: Record<PhotoKey, Photo> = {
-  'logo': { src: '/images/kaef/logo.jpg', width: 640, height: 640, alt: 'Знак Каеф: белые листья на зелёном фоне' },
-  'cups-winter': { src: '/images/kaef/cups-winter.jpg', width: 1502, height: 2000, alt: 'Стаканы Каеф с фирменным знаком в зимний вечер' },
+  'logo': { src: '/images/kaef/logo.jpg', width: 640, height: 640, alt: 'Знак Кәеф: белые листья на зелёном фоне' },
+  'cups-winter': { src: '/images/kaef/cups-winter.jpg', width: 1502, height: 2000, alt: 'Стаканы Кәеф с фирменным знаком в зимний вечер' },
   'cup-takeaway': { src: '/images/kaef/cup-takeaway.jpg', width: 1500, height: 2000, alt: 'Стакан кофе с собой с листовым узором' },
-  'interior-hall': { src: '/images/kaef/interior-hall.jpg', width: 1500, height: 2000, alt: 'Зал Каеф: изумрудные диваны и деревянные столы' },
-  'interior-banquette': { src: '/images/kaef/interior-banquette.jpg', width: 1500, height: 2000, alt: 'Изумрудный диван и меню на столе в зале Каеф' },
-  'interior-greenery': { src: '/images/kaef/interior-greenery.jpg', width: 1500, height: 2000, alt: 'Зал Каеф с подвесной зеленью и тёплым светом' },
-  'interior-wide': { src: '/images/kaef/interior-wide.jpg', width: 1500, height: 2000, alt: 'Светлый зал Каеф с зеленью под потолком и большими окнами' },
-  'interior-ceiling': { src: '/images/kaef/interior-ceiling.jpg', width: 1500, height: 2000, alt: 'Терракотовый потолок и подвесные растения над стойкой Каеф' },
+  'interior-hall': { src: '/images/kaef/interior-hall.jpg', width: 1500, height: 2000, alt: 'Зал Кәеф: изумрудные диваны и деревянные столы' },
+  'interior-banquette': { src: '/images/kaef/interior-banquette.jpg', width: 1500, height: 2000, alt: 'Изумрудный диван и меню на столе в зале Кәеф' },
+  'interior-greenery': { src: '/images/kaef/interior-greenery.jpg', width: 1500, height: 2000, alt: 'Зал Кәеф с подвесной зеленью и тёплым светом' },
+  'interior-wide': { src: '/images/kaef/interior-wide.jpg', width: 1500, height: 2000, alt: 'Светлый зал Кәеф с зеленью под потолком и большими окнами' },
+  'interior-ceiling': { src: '/images/kaef/interior-ceiling.jpg', width: 1500, height: 2000, alt: 'Терракотовый потолок и подвесные растения над стойкой Кәеф' },
   'interior-slogan': { src: '/images/kaef/interior-slogan.jpg', width: 1500, height: 2000, alt: 'Надпись на стене зала: «Место, где тебя ждут»' },
-  'interior-counter': { src: '/images/kaef/interior-counter.jpg', width: 2000, height: 1500, alt: 'Барная стойка и открытые полки в Каеф' },
+  'interior-counter': { src: '/images/kaef/interior-counter.jpg', width: 2000, height: 1500, alt: 'Барная стойка и открытые полки в Кәеф' },
   'counter-bar': { src: '/images/kaef/counter-bar.jpg', width: 1502, height: 2000, alt: 'Стойка с кассой, витриной и меню' },
   'pastry-case': { src: '/images/kaef/pastry-case.jpg', width: 1502, height: 2000, alt: 'Витрина с выпечкой и десертами' },
   'teapot-ornament': { src: '/images/kaef/teapot-ornament.jpg', width: 2000, height: 1500, alt: 'Чайник и чашка с резным орнаментом на деревянном столе' },
   'latte-ornament': { src: '/images/kaef/latte-ornament.jpg', width: 1500, height: 2000, alt: 'Латте в чашке с орнаментом и тарелка с завтраком' },
   'coffee-ornament': { src: '/images/kaef/coffee-ornament.jpg', width: 1500, height: 2000, alt: 'Чёрный кофе в чашке с резным узором' },
   'tea-mochi': { src: '/images/kaef/tea-mochi.jpg', width: 1125, height: 2000, alt: 'Чай и моти на керамической посуде' },
-  'facade': { src: '/images/kaef/facade.jpg', width: 956, height: 720, alt: 'Фасад Каеф со входом и вывеской «Гастрокофейня»' },
-  'facade-spring': { src: '/images/kaef/facade-spring.jpg', width: 1125, height: 2000, alt: 'Вход в Каеф с весенним декором' },
-  'entrance-festive': { src: '/images/kaef/entrance-festive.jpg', width: 956, height: 720, alt: 'Вход в Каеф, украшенный зелёной гирляндой' },
+  'facade': { src: '/images/kaef/facade.jpg', width: 956, height: 720, alt: 'Фасад Кәеф со входом и вывеской «Гастрокофейня»' },
+  'facade-spring': { src: '/images/kaef/facade-spring.jpg', width: 1125, height: 2000, alt: 'Вход в Кәеф с весенним декором' },
+  'entrance-festive': { src: '/images/kaef/entrance-festive.jpg', width: 956, height: 720, alt: 'Вход в Кәеф, украшенный зелёной гирляндой' },
   'dish-sandwich-egg': { src: '/images/kaef/dish-sandwich-egg.jpg', width: 1500, height: 2000, alt: 'Бутерброд с глазуньей, овощами и сыром на тёмной тарелке' },
   'dish-black-pasta': { src: '/images/kaef/dish-black-pasta.jpg', width: 1500, height: 2000, alt: 'Чёрная паста с тигровыми креветками и лаймом' },
   'dish-tom-yam': { src: '/images/kaef/dish-tom-yam.jpg', width: 1500, height: 2000, alt: 'Суп том-ям с тигровыми креветками в рифлёной миске' },
@@ -92,7 +92,9 @@ export type Feature = { id: string; label: string; icon: 'wifi' | 'car' | 'dog' 
 const ORG_ID = '91052974636'
 
 export const cafe = {
-  name: 'Каеф',
+  name: 'Кәеф',
+  /** написание в Яндекс Картах — для поиска и разметки */
+  nameAlt: 'Каеф',
   nameLatin: 'Kaef',
   descriptor: 'Гастрокофейня',
   slogan: 'Место, где тебя ждут',

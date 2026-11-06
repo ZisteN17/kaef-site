@@ -5,7 +5,7 @@ import { motion, useMotionValue, useMotionValueEvent, useReducedMotion, useScrol
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
 import Photo from './Photo'
 import WaveDivider from './WaveDivider'
-import { menu, menuNote, photos } from '../data/cafe'
+import { cafe, menu, menuNote, photos } from '../data/cafe'
 import { formatPrice } from '../lib/format'
 import { menuUrl } from '../lib/links'
 import { btnGhostLight } from './ui'
@@ -16,7 +16,7 @@ function Intro() {
   return (
     <div className="w-[min(82vw,520px)] shrink-0">
       <p className="section-label text-green">Меню</p>
-      <h2 className="mt-3 text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02]">За чем приходят в Каеф</h2>
+      <h2 className="mt-3 text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02]">За чем приходят в {cafe.name}</h2>
       <p className="mt-4 max-w-[30rem] text-ink/80">Завтраки, супы и паста — шесть блюд из меню, с которых удобно начать.</p>
     </div>
   )
