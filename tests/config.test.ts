@@ -5,19 +5,20 @@ import { isDemo, siteUrl } from '../src/lib/site'
 
 describe('режим отзывов', () => {
   const org = '91052974636'
-  it('без настроек — официальный виджет организации', () => {
-    expect(resolveReviews(undefined, org)).toEqual({ mode: 'yandex-widget', widgetUrl: 'https://yandex.ru/maps-reviews-widget/91052974636?comments' })
-    expect(resolveReviews('  ', org).mode).toBe('yandex-widget')
-  })
-  it('свой адрес Яндекса подставляется', () => {
-    expect(resolveReviews('https://yandex.ru/maps-reviews-widget/1?comments', org).widgetUrl).toBe('https://yandex.ru/maps-reviews-widget/1?comments')
-  })
-  it('off выключает виджет', () => {
+  it('по умолчанию — отобранные цитаты', () => {
+    expect(resolveReviews(undefined, org)).toEqual({ mode: 'curated' })
+    expect(resolveReviews('  ', org)).toEqual({ mode: 'curated' })
     expect(resolveReviews('off', org)).toEqual({ mode: 'curated' })
+  })
+  it('значение default включает официальный виджет организации', () => {
+    expect(resolveReviews('default', org)).toEqual({ mode: 'yandex-widget', widgetUrl: 'https://yandex.ru/maps-reviews-widget/91052974636?comments' })
+  })
+  it('свой адрес Яндекса включает виджет', () => {
+    expect(resolveReviews('https://yandex.ru/maps-reviews-widget/1?comments', org)).toEqual({ mode: 'yandex-widget', widgetUrl: 'https://yandex.ru/maps-reviews-widget/1?comments' })
   })
   it('чужой или небезопасный адрес игнорируется', () => {
     for (const bad of ['http://yandex.ru/x', 'https://evil.example/widget', 'javascript:alert(1)']) {
-      expect(resolveReviews(bad, org).widgetUrl).toBe('https://yandex.ru/maps-reviews-widget/91052974636?comments')
+      expect(resolveReviews(bad, org)).toEqual({ mode: 'curated' })
     }
   })
 })
