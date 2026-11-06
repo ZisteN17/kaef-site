@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Знак Каеф">
+  <rect width="64" height="64" rx="14" fill="#356356"/>
+  <path d="M17 12h5v18h-5z" fill="#f2f2ea"/>
+  <path d="M22 28c0-9 7-15 18-15 0 10-7 16-18 15z" fill="#f2f2ea"/>
+  <path d="M10 50c0-9 8-15 19-15 0 10-8 17-19 15z" fill="#f2f2ea"/>
+  <path d="M30 51c0-9 8-15 19-15 0 10-8 17-19 15z" fill="#f2f2ea"/>
+</svg>

@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Все значения — токены. Компоненты берут только их. */
+:root {
+  --kaef-green: #356356;
+  --kaef-deep: #1e3a31;
+  --kaef-paper: #f2f2ea;
+  --kaef-ceramic: #e4dac6;
+  --kaef-ink: #17231f;
+  --kaef-rust: #a8483a;
+  --kaef-mint: #b9d3c4;
+
+  --radius-btn: 6px;
+  --radius-card: 4px;
+  --radius-arch: 999px 999px 0 0;
+
+  --container: 1280px;
+  --gutter: 20px;
+  --space-section: 96px;
+  --space-section-lg: 160px;
+  --space-section-md: 120px;
+
+  --dur-fast: 200ms;
+  --dur-scene: 1200ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --header-h: 64px;
+  --mobilebar-h: 64px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 48px;
+    --space-section: 120px;
+    --space-section-lg: 200px;
+    --space-section-md: 150px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--kaef-paper);
+  color: var(--kaef-ink);
+  font-family: var(--font-text), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+  padding-bottom: calc(var(--mobilebar-h) + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 0;
+    font-size: 18px;
+  }
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+:focus-visible {
+  outline: 3px solid var(--kaef-rust);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.on-dark :focus-visible { outline-color: var(--kaef-mint); }
+
+/* Фирменный жест: фото проходит сквозь буквы слова «Каеф» */
+.word-photo {
+  color: var(--kaef-paper); /* fallback без background-clip */
+  background-image: var(--word-bg);
+  background-size: cover;
+  background-position: center 38%;
+  letter-spacing: 0.02em;
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .word-photo {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 0.035em transparent;
+  }
+}
+
+.section-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.js .reveal:not(.is-in) {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.reveal {
+  transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal:not(.is-in) { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
