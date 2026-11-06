@@ -3,7 +3,7 @@ import { Geologica, Kurale } from 'next/font/google'
 import './globals.css'
 import { cafe } from '../data/cafe'
 import { cafeJsonLd } from '../lib/jsonld'
-import { siteUrl } from '../lib/site'
+import { isDemo, siteUrl } from '../lib/site'
 import Analytics from '../components/Analytics'
 import ConsentBanner from '../components/ConsentBanner'
 
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: '/' },
+  robots: isDemo() ? { index: false, follow: false } : undefined,
   openGraph: {
     type: 'website',
     locale: 'ru_RU',

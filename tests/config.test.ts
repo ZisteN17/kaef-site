@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { resolveReviewsMode } from '../src/lib/reviews-mode'
 import { metrikaId } from '../src/lib/consent'
-import { siteUrl } from '../src/lib/site'
+import { isDemo, siteUrl } from '../src/lib/site'
 
 describe('режим отзывов', () => {
   it('без адреса — curated', () => {
@@ -34,5 +34,13 @@ describe('адрес сайта', () => {
   it('по умолчанию локальный, без завершающего слэша', () => {
     expect(siteUrl(undefined)).toBe('http://localhost:3010')
     expect(siteUrl('https://kaef.example/')).toBe('https://kaef.example')
+  })
+})
+
+describe('демо-режим', () => {
+  it('без домена — демо (не индексировать), с доменом — боевой', () => {
+    expect(isDemo(undefined)).toBe(true)
+    expect(isDemo('  ')).toBe(true)
+    expect(isDemo('https://kaef.example')).toBe(false)
   })
 })

@@ -16,7 +16,7 @@ npm run lint && npm run typecheck && npm test
 
 | Переменная | Что делает |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | домен сайта для OG, sitemap, canonical |
+| `NEXT_PUBLIC_SITE_URL` | домен сайта для OG, sitemap, canonical. Пока пусто, сайт считается демо и закрыт от индексации (noindex, robots Disallow) |
 | `NEXT_PUBLIC_YM_ID` | номер счётчика Яндекс Метрики; пусто — аналитика не подключается вообще |
 | `NEXT_PUBLIC_YANDEX_REVIEWS_WIDGET_URL` | адрес iframe официального виджета отзывов; пусто — показываются отобранные отзывы |
 
