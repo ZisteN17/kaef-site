@@ -13,8 +13,8 @@ export type { ReviewsMode }
 
 export default function ReviewsSection({ mode, widgetUrl }: { mode: ReviewsMode; widgetUrl?: string }) {
   return (
-    <section id="reviews" className="on-dark relative bg-deep pb-[130px] pt-[var(--space-section)] text-paper md:pb-[190px]">
-      <div className={`${container} grid gap-14 lg:grid-cols-12`}>
+    <section id="reviews" className="on-dark relative bg-deep pb-[var(--space-after-wave)] pt-[var(--space-section)] text-paper">
+      <div className={`${container} grid gap-10 lg:grid-cols-12`}>
         <Reveal className="lg:col-span-5">
           <p className="section-label text-mint">Отзывы</p>
           <p className="mt-4 font-display text-[clamp(6rem,14vw,11rem)] leading-[0.9] text-mint">{formatRating(cafe.rating.value)}</p>

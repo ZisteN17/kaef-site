@@ -7,14 +7,14 @@ import { container } from './ui'
 /** Последовательность вход → зал → стойка → посуда. Разные размеры и сдвиги, не masonry. */
 const place: Record<string, { cls: string; ratio: string; arch?: boolean; sizes: string }> = {
   entrance: { cls: 'md:col-span-7', ratio: 'aspect-[4/3]', sizes: '(min-width:768px) 58vw, 100vw' },
-  hall: { cls: 'md:col-span-4 md:col-start-9 md:mt-28', ratio: 'aspect-[3/4]', arch: true, sizes: '(min-width:768px) 32vw, 100vw' },
+  hall: { cls: 'md:col-span-4 md:col-start-9 md:mt-20', ratio: 'aspect-[3/4]', arch: true, sizes: '(min-width:768px) 32vw, 100vw' },
   counter: { cls: 'md:col-span-4 md:col-start-2', ratio: 'aspect-[3/4]', sizes: '(min-width:768px) 32vw, 100vw' },
-  ceramics: { cls: 'md:col-span-6 md:col-start-7 md:mt-16', ratio: 'aspect-[4/3]', sizes: '(min-width:768px) 50vw, 100vw' },
+  ceramics: { cls: 'md:col-span-6 md:col-start-7 md:mt-10', ratio: 'aspect-[4/3]', sizes: '(min-width:768px) 50vw, 100vw' },
 }
 
 export default function Atmosphere() {
   return (
-    <section id="atmosphere" className="relative bg-ceramic pb-[130px] pt-[var(--space-section-md)] md:pb-[200px]">
+    <section id="atmosphere" className="relative bg-ceramic pb-[var(--space-after-wave)] pt-[var(--space-section)]">
       <div className={container}>
         <Reveal>
           <p className="section-label text-green">Атмосфера</p>
@@ -25,7 +25,7 @@ export default function Atmosphere() {
           </p>
         </Reveal>
 
-        <ol className="mt-14 grid gap-12 md:mt-20 md:grid-cols-12 md:gap-x-8 md:gap-y-16">
+        <ol className="mt-10 grid gap-10 md:mt-14 md:grid-cols-12 md:gap-x-8 md:gap-y-12">
           {atmosphere.map((a, i) => {
             const p = place[a.id]
             return (
@@ -43,7 +43,7 @@ export default function Atmosphere() {
           })}
         </ol>
 
-        <Reveal className="mt-20 md:mt-28">
+        <Reveal className="mt-14 md:mt-16">
           <p className="max-w-[18ch] font-display text-[clamp(2rem,4.5vw,4rem)] leading-[1.05] text-green">
             «{cafe.slogan}»
           </p>

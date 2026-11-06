@@ -8,8 +8,8 @@ const icons: Record<string, LucideIcon> = { wifi: Wifi, car: Car, dog: Dog, sun:
 
 export default function Suits() {
   return (
-    <section id="suits" className="relative bg-paper pb-[120px] pt-[var(--space-section)] md:pb-[190px]">
-      <div className={`${container} grid gap-14 lg:grid-cols-12`}>
+    <section id="suits" className="relative bg-paper pb-[var(--space-after-wave)] pt-[var(--space-section)]">
+      <div className={`${container} grid gap-10 lg:grid-cols-12`}>
         <Reveal className="lg:col-span-7">
           <p className="section-label text-green">Подходит для</p>
           <ul className="mt-6 border-t border-green/30">

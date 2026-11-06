@@ -7,8 +7,8 @@ import { btnPrimary, container } from './ui'
 export default function Location() {
   const row = 'flex items-start gap-4'
   return (
-    <section id="contacts" className="bg-paper pb-[var(--space-section)] pt-[var(--space-section-md)] md:pt-[var(--space-section)]">
-      <div className={`${container} grid gap-12 lg:grid-cols-12`}>
+    <section id="contacts" className="bg-paper pb-[var(--space-section)] pt-[var(--space-section)]">
+      <div className={`${container} grid gap-10 lg:grid-cols-12`}>
         <Reveal className="lg:col-span-5">
           <p className="section-label text-green">Как добраться</p>
           <h2 className="mt-3 text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02]">Ждём на Мансура Хасанова</h2>
@@ -49,7 +49,7 @@ export default function Location() {
         </Reveal>
 
         <div className="lg:col-span-7">
-          <div className="overflow-hidden bg-ceramic" style={{ borderRadius: 'var(--radius-arch)' }}>
+          <div className="overflow-hidden rounded-card bg-ceramic">
             <iframe
               src={mapEmbedUrl()}
               title={`Карта: ${cafe.name}, ${cafe.address.street}`}

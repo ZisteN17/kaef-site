@@ -16,7 +16,7 @@ export default function Hero() {
   const word = photos['interior-wide']
 
   return (
-    <section id="top" className="on-dark relative overflow-hidden bg-deep pb-[110px] pt-[calc(var(--header-h)+40px)] text-paper md:pb-[170px] md:pt-[calc(var(--header-h)+72px)]">
+    <section id="top" className="on-dark relative overflow-hidden bg-deep pb-[88px] pt-[calc(var(--header-h)+32px)] text-paper md:pb-[132px] md:pt-[calc(var(--header-h)+56px)]">
       <div className={`${container} grid items-center gap-10 lg:grid-cols-12`}>
         <div className="lg:col-span-7">
           <motion.p
