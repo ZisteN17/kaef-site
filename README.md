@@ -66,3 +66,9 @@ src/data/cafe.ts    весь контент
 src/lib/            links, format, jsonld, consent, site, reviews-mode (чистые функции)
 tests/              тесты на lib и целостность данных
 ```
+
+## Деплой на Vercel
+
+Проект `kaef-site` в Vercel, публикация вручную: `vercel deploy --prod --yes` из этой папки (нужен `vercel login`).
+Vercel блокирует деплой, если автор последнего коммита не состоит в команде проекта: коммитьте от имени аккаунта, подключённого к Vercel.
+Пока `NEXT_PUBLIC_SITE_URL` не задан, сайт закрыт от индексации (демо).
