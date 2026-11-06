@@ -25,6 +25,7 @@
   --dur-scene: 1200ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
+  --wave-h: 40px;
   --header-h: 64px;
   --mobilebar-h: 64px;
 }
@@ -34,6 +35,7 @@
     --gutter: 48px;
     --space-section: 72px;
     --space-after-wave: 108px; /* волна 72px + воздух */
+    --wave-h: 72px;
   }
 }
 
@@ -68,13 +70,7 @@ h1, h2, h3 {
 
 p { text-wrap: pretty; }
 
-/* Лента блюд: левый край выровнен по контейнеру, правый уходит за экран */
-.rail {
-  padding-inline: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter)));
-  scroll-padding-inline: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter)));
-}
-.no-scrollbar { scrollbar-width: none; }
-.no-scrollbar::-webkit-scrollbar { display: none; }
+
 
 :focus-visible {
   outline: 3px solid var(--kaef-rust);

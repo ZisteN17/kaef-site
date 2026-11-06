@@ -19,16 +19,7 @@ export default function Hero() {
     <section id="top" className="on-dark relative overflow-hidden bg-deep pb-[88px] pt-[calc(var(--header-h)+32px)] text-paper md:pb-[132px] md:pt-[calc(var(--header-h)+56px)]">
       <div className={`${container} grid items-center gap-10 lg:grid-cols-12`}>
         <div className="lg:col-span-7">
-          <motion.p
-            className="section-label text-mint"
-            initial={reduce ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease, delay: 0.1 }}
-          >
-            {cafe.descriptor} · {cafe.city}
-          </motion.p>
-
-          <h1 className="mt-3">
+          <h1>
             <motion.span
               className="word-photo block pb-[0.08em] font-display leading-[0.95] text-[clamp(6.5rem,36vw,15rem)] lg:text-[clamp(10rem,19vw,17rem)]"
               style={{ ['--word-bg' as string]: `url(${word.src})` }}
